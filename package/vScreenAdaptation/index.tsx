@@ -1,6 +1,7 @@
 import { defineComponent, h, PropType, CSSProperties, ref, onMounted, watch } from 'vue'
 import './style/index.css'
 import { debounce } from 'lodash-es'
+import { getAllZoom } from './src/utils.ts'
 enum MODE {
   auto = 'auto',
   freedom = 'freedom'
@@ -67,8 +68,11 @@ const VScreenAdaptation = defineComponent({
       const h = window.innerHeight / Number(props.height)
       return w < h ? w : h
     }
+
     const setScale = () => {
       console.log('setScale', props.mode)
+      console.log('scale', props.scale)
+      console.log('缩放百分比', getAllZoom())
       if (props.mode === 'freedom') {
         console.log('scale', props.scale)
         style.value.width = window.innerWidth * (1 / Number(props.scale)) + 'px'
