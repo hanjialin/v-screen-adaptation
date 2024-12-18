@@ -1,22 +1,28 @@
 <template>
-  <VScreenAdaptation :mode="mode" :scale="scale">
-    <div>
-      <a href="https://vitejs.dev" target="_blank">
-        <img src="/vite.svg" class="logo" alt="Vite logo" />
-      </a>
-      <a href="https://vuejs.org/" target="_blank">
-        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-      </a>
-    </div>
-    <HelloWorld msg="Vite + Vue" />
-    <div>测试slots，default1</div>
-    <div>测试slots，default2</div>
-    <div>
-      <button @click="change">{{ mode }}</button>
-    </div>
-    <div>
-      <input id="mySlider" v-model.number="scale" type="range" min="1" max="2.8" step="0.1" />
-      <span style="width: 20px; display: inline-block"> {{ scale }}</span>
+  <VScreenAdaptation height="1080" :mode="mode" :scale="scale">
+    <div style="position: relative; height: 100%; width: 100%">
+      <div class="item" style="top: 0; left: 0"></div>
+      <div class="item" style="top: 0; right: 0"></div>
+      <div class="item" style="bottom: 0; left: 0"></div>
+      <div class="item" style="bottom: 0; right: 0"></div>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="/vite.svg" class="logo" alt="Vite logo" />
+        </a>
+        <a href="https://vuejs.org/" target="_blank">
+          <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+        </a>
+      </div>
+      <HelloWorld msg="Vite + Vue" />
+      <div>测试slots，default1</div>
+      <div>测试slots，default2</div>
+      <div>
+        <button @click="change">{{ mode }}</button>
+      </div>
+      <div>
+        <input id="mySlider" v-model.number="scale" type="range" min="1" max="2.8" step="0.1" />
+        <span style="width: 20px; display: inline-block"> {{ scale }}</span>
+      </div>
     </div>
   </VScreenAdaptation>
 </template>
@@ -46,5 +52,11 @@ const change = () => {
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.item {
+  background: #000;
+  width: 50px;
+  height: 50px;
+  position: absolute;
 }
 </style>
