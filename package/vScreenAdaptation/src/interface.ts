@@ -22,3 +22,16 @@ export interface DisplayTypes {
   display?: 'auto' | 'freedom'
   scale: number
 }
+/**
+ * @desc 组件的props
+ * @param width 宽度
+ * @param height 高度
+ * @param display 显示模式 auto-自动模式,自动根据宽高设置缩放倍率 freedom-自由模式,控制缩放倍率,计算出合适的宽高
+ * @author HanJiaLin
+ * @time 2024/12/18 10:54
+ **/
+export interface ScreenAdaptationProps {
+  width?: number
+  height?: number
+  display?: 'auto' | 'freedom'
+}

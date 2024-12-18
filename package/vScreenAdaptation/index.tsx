@@ -1,5 +1,5 @@
 import { defineComponent, h, PropType, CSSProperties, ref, onMounted, watch } from 'vue'
-import '../style/index.css'
+import './style/index.css'
 import { debounce } from 'lodash-es'
 enum MODE {
   auto = 'auto',
