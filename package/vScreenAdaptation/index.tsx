@@ -5,22 +5,6 @@ enum MODE {
   auto = 'auto',
   freedom = 'freedom'
 }
-/*const debounce = (fn: any, t: any) => {
-  const delay = t || 500
-  let timer: any
-  return function () {
-    // eslint-disable-next-line prefer-rest-params
-    const args: any = arguments
-    if (timer) {
-      clearTimeout(timer)
-    }
-    const context = getCurrentInstance()
-    timer = setTimeout(() => {
-      timer = null
-      fn.apply(context, args)
-    }, delay)
-  }
-}*/
 const VScreenAdaptation = defineComponent({
   name: 'VScreenAdaptation',
   props: {
