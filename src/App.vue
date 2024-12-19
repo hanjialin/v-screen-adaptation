@@ -14,8 +14,7 @@
         </a>
       </div>
       <HelloWorld msg="Vite + Vue" />
-      <div>浏览器缩放:{{ browserZoom }}</div>
-      <div>系统缩放:{{ systemZoom }}</div>
+
       <div>
         <button @click="change">{{ mode }}</button>
       </div>
@@ -30,7 +29,6 @@
 import HelloWorld from './components/HelloWorld.vue'
 import VScreenAdaptation from '../package/index'
 import { ref } from 'vue'
-import { getAllZoom } from './demo/src/utils.ts'
 
 const mode = ref('auto')
 const scale = ref(1)
@@ -41,7 +39,6 @@ const change = () => {
     mode.value = 'auto'
   }
 }
-const { systemResolution, zoom, browserZoom, systemZoom } = getAllZoom()
 </script>
 <style scoped>
 .logo {
