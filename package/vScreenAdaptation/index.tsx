@@ -1,7 +1,6 @@
 import { defineComponent, h, PropType, CSSProperties, ref, onMounted, watch } from 'vue'
 import './style/index.css'
 import { debounce } from 'lodash-es'
-import { getAllZoom } from './src/utils.ts'
 enum MODE {
   auto = 'auto',
   freedom = 'freedom'
@@ -50,7 +49,6 @@ const VScreenAdaptation = defineComponent({
       height: (props.height + 'px') as string,
       transform: 'scale(1) translate(-50%, -50%)'
     })
-    console.log(style)
 
     /*
      * @desc 获取放大缩小比例
@@ -70,11 +68,7 @@ const VScreenAdaptation = defineComponent({
     }
 
     const setScale = () => {
-      console.log('setScale', props.mode)
-      console.log('scale', props.scale)
-      console.log('缩放百分比', getAllZoom())
-      if (props.mode === 'freedom') {
-        console.log('scale', props.scale)
+      if (props.mode.toLocaleLowerCase() === 'freedom') {
         style.value.width = window.innerWidth * (1 / Number(props.scale)) + 'px'
         style.value.height = window.innerHeight * (1 / Number(props.scale)) + 'px'
         style.value.transform = 'scale(' + props.scale + ') translate(-50%, -50%)'
@@ -90,22 +84,16 @@ const VScreenAdaptation = defineComponent({
     const debouncedFunction = debounce(setScale, 1000)
     watch(
       () => props.mode,
-      (newValue) => {
-        console.log(newValue)
+      () => {
         debouncedFunction()
-        console.log(style.value)
-        //获取新改变的模式
       }
     )
     watch(
       () => props.scale,
-      (newValue) => {
-        console.log(newValue)
+      () => {
         debouncedFunction()
-        console.log(style.value)
       }
     )
-    console.log(props)
 
     const el = ref<HTMLElement>()
     onMounted(() => {

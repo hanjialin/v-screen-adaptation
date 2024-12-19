@@ -1,11 +1,12 @@
+/*
 import { defineComponent, h, PropType, CSSProperties, ref, onMounted, watch } from 'vue'
-import '../style/index.css'
+import '../../../package/vScreenAdaptation/style/index.css'
 import { debounce } from 'lodash-es'
 enum MODE {
   auto = 'auto',
   freedom = 'freedom'
 }
-/*const debounce = (fn: any, t: any) => {
+/!*const debounce = (fn: any, t: any) => {
   const delay = t || 500
   let timer: any
   return function () {
@@ -20,7 +21,7 @@ enum MODE {
       fn.apply(context, args)
     }, delay)
   }
-}*/
+}*!/
 const VScreenAdaptation = defineComponent({
   name: 'VScreenAdaptation',
   props: {
@@ -51,11 +52,11 @@ const VScreenAdaptation = defineComponent({
     })
     console.log(style)
 
-    /*
+    /!*
      * @desc 获取放大缩小比例
      * @author HanJiaLin
      * @time 2023/4/13 11:44
-     * */
+     * *!/
     const getScale = () => {
       const w =
         window.innerWidth /
@@ -122,3 +123,4 @@ const VScreenAdaptation = defineComponent({
   }
 })
 export default VScreenAdaptation
+*/

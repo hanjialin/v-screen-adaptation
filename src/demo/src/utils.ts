@@ -1,10 +1,11 @@
+/*
 import { reactive } from 'vue'
-import { DisplayAspectRatio } from './interface'
-/**
+import { DisplayAspectRatio } from './interface.ts'
+/!**
  * @desc 获取默认的宽高比
  * @author HanJiaLin
  * @time 2024/12/17 22:45
- **/
+ **!/
 export const getDefaultDisplayState = () => {
   return reactive<DisplayAspectRatio>({
     windowWidth: 1920,
@@ -75,3 +76,4 @@ export function getAllZoom() {
     systemResolution
   }
 }
+*/

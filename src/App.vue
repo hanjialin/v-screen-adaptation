@@ -30,7 +30,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import VScreenAdaptation from '../package/index'
 import { ref } from 'vue'
-import { getAllZoom } from '../package/vScreenAdaptation/src/utils.ts'
+import { getAllZoom } from './demo/src/utils.ts'
 
 const mode = ref('auto')
 const scale = ref(1)
