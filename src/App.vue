@@ -27,7 +27,7 @@
 </template>
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import VScreenAdaptation from '../package/index'
+import VScreenAdaptation from '../package'
 import { ref } from 'vue'
 
 const mode = ref('auto')

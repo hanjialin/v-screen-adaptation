@@ -16,7 +16,7 @@ const VScreenAdaptation = defineComponent({
       default: 1080
     },
     mode: {
-      type: [String] as PropType<string>,
+      type: [String] as PropType<'auto' | 'freedom'>,
       default: MODE.auto
     },
     scale: {
@@ -89,7 +89,7 @@ const VScreenAdaptation = defineComponent({
         'div',
         {
           class: 'screen-adapter',
-          style: { background: '#fff', color: '#333', ...style.value },
+          style: { ...style.value },
           ref: el
         },
         slots.default?.()

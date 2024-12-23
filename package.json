@@ -1,9 +1,13 @@
 {
   "name": "v-screen-adaptation",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Vue3可视化大屏自适应组件",
   "type": "module",
+  "main": "dist/v-screen-adaptation.umd.cjs",
+  "module": "dist/v-screen-adaptation.js",
+  "unpkg": "dist/v-screen-adaptation.iife.js",
+  "types": "dist/types/index.d.ts",
   "engines": {
     "node": ">=18 <22"
   },
@@ -39,6 +43,7 @@
     "prettier": "^3.2.5",
     "typescript": "^5.7.2",
     "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.4.0",
     "vue": "^3.3.0",
     "vue-tsc": "^2.1.10"
   },
